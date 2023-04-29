@@ -1,12 +1,22 @@
 import { useLoaderData } from '@remix-run/react'
 import { getGuitars } from '~/models/guitars.server'
 import Guitar from '~/components/guitar'
+import styles from '~/styles/guitars.css'
 
 
 export function meta() {
   return [
     {title: "Guitar LA - Tienda"},
-    {description: "Venta de guitarras, blog de música"}
+    {description: "Venta de guitarras, colección de guitarras"}
+  ]
+}
+
+export function links() {
+  return [
+    {
+      rel: 'stylesheet',
+      href: styles,
+    }
   ]
 }
 
