@@ -1,14 +1,38 @@
+import { useLoaderData } from '@remix-run/react'
+import { getGuitars } from '~/models/guitars.server'
+import Guitar from '~/components/guitar'
+
+
 export function meta() {
   return [
-    {charset: "utf-8"},
     {title: "Guitar LA - Tienda"},
-    {viewport: "width=device-width, initial-scale=1"} 
+    {description: "Venta de guitarras, blog de música"}
   ]
 }
 
+export async function loader() {
+  const guitars = await getGuitars()
+  console.log(guitars)
+  return guitars.data
+}
+
+
 const Tienda = () => {
+
+  const guitars = useLoaderData()
+
   return (
-    <div>store</div>
+    <main  className='container'>
+      <h2 className='heading'>Nuestra Colección</h2>
+
+      {guitars?.length && (
+        <div className='guitars-grid'>
+          {guitars?.map( guitar => (
+            <Guitar guitar={guitar?.attributes} key={guitar?.id} />
+          ))}
+        </div>
+      )}
+    </main>
   )
 }
 
