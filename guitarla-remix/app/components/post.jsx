@@ -12,7 +12,7 @@ const Post = ({post}) => {
                 <h3 className='post-title'>{title}</h3>
                 <p className="post-date">{dateFormat(publishedAt)}</p>
                 <p className="post-resume">{content}</p>
-                <Link className='link' to={`/posts/${url}`}>Leer Artículo</Link>
+                <Link className='link' to={`/blog/${url}`}>Leer Artículo</Link>
             </div>
         </article>
     )
