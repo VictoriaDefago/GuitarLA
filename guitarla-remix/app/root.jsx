@@ -86,7 +86,7 @@ export function ErrorBoundary() {
         <div>
           <h1>{error.status} {error.statusText}</h1>
           <p>{error.data}</p>
-          <Link className='error-link' to='/'>Volver a la página principal</Link>
+          <Link className='error-link' to='/' >Volver a la página principal</Link>
         </div>
       );
     } else if (error instanceof Error) {
@@ -96,6 +96,7 @@ export function ErrorBoundary() {
           <p>{error.message}</p>
           <p>The stack trace is:</p>
           <pre>{error.stack}</pre>
+          <Link className='error-link' to='/' >Volver a la página principal</Link>
         </div>
       );
     } else {

@@ -3,7 +3,6 @@ import { Link } from '@remix-run/react'
 export default function Guitar({guitar}) {
 
     const {name, description, image, url, price} = guitar
-    console.log(url)
 
     return (
         <main className="guitar">
