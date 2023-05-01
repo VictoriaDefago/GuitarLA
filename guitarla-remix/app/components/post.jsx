@@ -7,9 +7,9 @@ const Post = ({post}) => {
 
     return (
         <article className="post">
-            <img className='image' src={image.data.attributes.formats.small.url} alt={`Imagen Guitarra ${title}`} />
+            <img className='image' src={image.data.attributes.formats.small.url} alt={`Imagen Artículo ${title}`} />
             <div className="content">
-                <h3>{title}</h3>
+                <h3 className='post-title'>{title}</h3>
                 <p className="post-date">{dateFormat(publishedAt)}</p>
                 <p className="post-resume">{content}</p>
                 <Link className='link' to={`/posts/${url}`}>Leer Artículo</Link>
