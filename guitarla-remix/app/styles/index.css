@@ -67,6 +67,7 @@
 
   .header .nav {
     display: flex;
+    align-items: center;
     gap: 2rem;
     margin-top: 5rem;
   }
@@ -86,6 +87,10 @@
     padding: .5rem;
     transition-property: background-color;
     transition-duration: 500ms;
+  }
+
+  .header .nav img {
+    width: 2.2rem;
   }
 
   .header .nav a:hover, .header .active {
@@ -119,6 +124,10 @@
     .footer .nav {
       flex-direction: row;
     }
+  }
+
+  .footer .nav a:last-of-type {
+    display: none;
   }
 
   .footer .nav a,
