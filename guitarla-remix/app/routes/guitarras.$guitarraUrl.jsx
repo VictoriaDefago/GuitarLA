@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useLoaderData } from '@remix-run/react'
 import { getGuitar } from '~/models/guitars.server'
 
@@ -31,9 +32,10 @@ export function meta({data}) {
 
 const Guitar = () => {
 
+    const [quantity, setQuantity] = useState(0)
+
     const guitar = useLoaderData()
     const {name, price, image, description} = guitar.data[0].attributes
-    console.log(image)
 
     return (
         <div className='guitar'>
@@ -43,6 +45,19 @@ const Guitar = () => {
                 <h3>{name}</h3>
                 <p className='text'>{description}</p>
                 <p className='price'>${price}</p>
+
+                <form className='form'>
+                    <label htmlFor='quantity'>Cantidad</label>
+                    <select id="quantity" onChange={ e => setQuantity(+e.target.value)}>
+                        <option value="">-- Seleccione --</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <input type='submit' value='Agregar al carrito' />
+                </form>
             </div>
         </div>
     )

@@ -35,6 +35,7 @@
     font-size: 3rem;
     text-transform: uppercase;
     color: var(--primary);
+    margin-top:15px;
 }
 
 .guitar .content .description {
@@ -55,4 +56,38 @@
 
 .guitar .text {
     text-align: justify;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form label {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.form select {
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid var(--black);
+    border-radius: 1rem;
+}
+
+.form input[type="submit"] {
+    margin-top: 3rem;
+    padding: 1.2rem;
+    border: none;
+    background-color: var(--black);
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: 700;
+    transition-property: background-color;
+    transition-duration: 300ms;
+}
+
+.form input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: var(--primary);
 }
