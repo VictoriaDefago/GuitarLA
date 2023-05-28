@@ -23,7 +23,7 @@ const Carrito = () => {
 
   const [total, setTotal] = useState(0)
 
-  const { shoppingCart, updateQuantity } = useOutletContext()
+  const { shoppingCart, updateQuantity, deleteGuitar } = useOutletContext()
 
   useEffect( () => {
     const calculation = shoppingCart.reduce( (total, product) => total + (product.quantity * product.price), 0)
@@ -61,6 +61,7 @@ const Carrito = () => {
                         <p className='price'>$ <span>{product.price}</span></p>
                         <p className='subtotal'>Subtotal: $ <span>{product.quantity * product.price}</span></p>
                       </div>
+                      <button type='button' onClick={ () => deleteGuitar(product.id) } className='delete'>X</button>
                     </div>
                   ))
 
