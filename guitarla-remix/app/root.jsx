@@ -8,6 +8,7 @@ import {
     useRouteError,
     Link
 } from '@remix-run/react'
+import { useState } from 'react'
 import styles from '~/styles/index.css'
 import Header from '~/components/header'
 import Footer from '~/components/footer'
@@ -49,9 +50,20 @@ export function links() {
 
 
 export default function App() {
+
+    const [shoppingCart, setShoppingCart] = useState([])
+
+    const addShoppingCart = guitar => {
+        setShoppingCart(...shoppingCart, guitar)
+    }
+     
     return (
         <Document>
-            <Outlet />
+            <Outlet 
+                context={{
+                    setShoppingCart
+                }}
+            />
         </Document>
     )
 }

@@ -1,4 +1,4 @@
-import { Outlet } from '@remix-run/react'
+import { Outlet, useOutletContext } from '@remix-run/react'
 import styles from '~/styles/guitars.css'
 
 
@@ -15,7 +15,9 @@ const Tienda = () => {
 
   return (
     <main  className='container'>
-      <Outlet />
+      <Outlet 
+        context={useOutletContext()}
+      />
     </main>
   )
 }
