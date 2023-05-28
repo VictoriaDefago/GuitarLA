@@ -41,7 +41,16 @@
     font-size: 4.2rem;
 }
 
-.price {
+.select {
+    all: unset;
+    border: 1px solid #cfcfcf;
+    text-align: center;
+    width: 100%;
+    padding: .5rem;
+    border-radius: 1rem;
+}
+
+.product .price {
     font-weight: 700;
     font-size: 2.2rem;
     color: var(--primary);
