@@ -54,7 +54,17 @@ export default function App() {
     const [shoppingCart, setShoppingCart] = useState([])
 
     const addShoppingCart = guitar => {
-        setShoppingCart(...shoppingCart, guitar)
+        if(guitar.some(guitarState => guitarState.id === guitar.id)){
+            const updatedShoppingCart = shoppingCart.map(guitarState => {
+                if(guitarState.id === guitar.id){
+                    guitarState.quantity = guitar.quantity
+                }
+                return guitarState
+            })
+            setShoppingCart(updatedShoppingCart)
+        } else {
+            setShoppingCart(...shoppingCart, guitar)
+        }
     }
      
     return (
