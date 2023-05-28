@@ -54,7 +54,7 @@ export default function App() {
     const [shoppingCart, setShoppingCart] = useState([])
 
     const addShoppingCart = guitar => {
-        if(guitar.some(guitarState => guitarState.id === guitar.id)){
+        if(shoppingCart.some(guitarState => guitarState.id === guitar.id)){
             const updatedShoppingCart = shoppingCart.map(guitarState => {
                 if(guitarState.id === guitar.id){
                     guitarState.quantity = guitar.quantity
@@ -63,7 +63,7 @@ export default function App() {
             })
             setShoppingCart(updatedShoppingCart)
         } else {
-            setShoppingCart(...shoppingCart, guitar)
+            setShoppingCart([...shoppingCart, guitar])
         }
     }
      
@@ -71,7 +71,8 @@ export default function App() {
         <Document>
             <Outlet 
                 context={{
-                    setShoppingCart
+                    addShoppingCart,
+                    shoppingCart
                 }}
             />
         </Document>

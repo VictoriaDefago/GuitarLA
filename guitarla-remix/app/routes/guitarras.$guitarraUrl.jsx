@@ -34,7 +34,7 @@ const Guitar = () => {
 
     const [quantity, setQuantity] = useState(0)
 
-    const { setShoppingCart } = useOutletContext()
+    const { addShoppingCart } = useOutletContext()
 
     const guitar = useLoaderData()
     const {name, price, image, description} = guitar.data[0].attributes
@@ -53,7 +53,7 @@ const Guitar = () => {
             quantity
         }
 
-        setShoppingCart(selectedGuitar)
+        addShoppingCart(selectedGuitar)
     }    
 
     return (
