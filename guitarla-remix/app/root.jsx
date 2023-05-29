@@ -8,7 +8,7 @@ import {
     useRouteError,
     Link
 } from '@remix-run/react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styles from '~/styles/index.css'
 import Header from '~/components/header'
 import Footer from '~/components/footer'
@@ -51,7 +51,12 @@ export function links() {
 
 export default function App() {
 
-    const [shoppingCart, setShoppingCart] = useState([])
+    const shoppingCartLS = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('shoppingCart')) ?? [] : null
+    const [shoppingCart, setShoppingCart] = useState(shoppingCartLS)
+
+    useEffect( () => {
+        localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart))
+    }, [shoppingCart])
 
     const addShoppingCart = guitar => {
         if(shoppingCart.some(guitarState => guitarState.id === guitar.id)){
