@@ -10,7 +10,9 @@ export default function Header() {
   return (
     <header className={styles.header}>
         <div className={`container ${styles.bar}`}>
-            <Image src="/img/logo.svg" width={300} height={40} alt='Imagen Logo Guitar LA' />
+            <Link href="/" >
+              <Image src="/img/logo.svg" width={300} height={40} alt='Imagen Logo Guitar LA' />
+            </Link>
             <nav className={styles.navigation} >
                 <Link href="/" className={ router.pathname === '/' ? styles.active : '' } >
                   Inicio
