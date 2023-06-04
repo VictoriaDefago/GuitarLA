@@ -8,7 +8,6 @@ export default function Home() {
   return (
     <>
       <Layout title={'Inicio'} description='Venta de guitarras y blog de música' />
-      <h1>Hola Mundo</h1>
     </>
   )
 }
