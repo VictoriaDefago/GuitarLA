@@ -7,7 +7,7 @@ export default function Nosotros() {
     <Layout title={'Nosotros'} description='Sobre Nosotros, Guitar LA, blog de música' >
 
       <main className='container'>
-        <h2 className='heading'>Nosotros</h2>
+        <h1 className='heading'>Nosotros</h1>
         <div className={styles.content}>
           <Image src="/img/nosotros.jpg" alt='Imagen Nosotros Guitar LA' width={1000} height={800} />
           <div>
