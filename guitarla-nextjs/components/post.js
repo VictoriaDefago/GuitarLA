@@ -14,7 +14,7 @@ export default function Post({post}) {
         <h3>{title}</h3>
         <p className={styles.date}>{dateFormat(publishedAt)}</p>
         <p className={styles.resume}>{content}</p>
-        <Link href={`/blog/${url}`} className={styles.link}>Ver Post</Link>
+        <Link href={`/blog/${url}`} className={styles.link}>Leer Post</Link>
       </div>
     </article>
   )
