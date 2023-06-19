@@ -1,8 +1,17 @@
+import { useState, useEffect } from 'react'
+import Image from "next/image"
 import Layout from "../components/layout"
 import styles from '../styles/shoppingCart.module.css'
-import Image from "next/image"
 
-export default function Carrito({shoppingCart, updateQuantity}) {
+export default function Carrito({shoppingCart, updateQuantity, deleteProduct}) {
+
+  const [total, setTotal] = useState(0)
+
+  useEffect( () => {
+    const calculation = shoppingCart.reduce( (total, product) => total + (product.price * product.quantity), 0 )
+    setTotal(calculation)
+  }, [shoppingCart])
+
   return (
     <Layout title="Carrito de Compras">
       <main className="container">
@@ -36,13 +45,15 @@ export default function Carrito({shoppingCart, updateQuantity}) {
                         <p className={styles.price}>$<span>{product.price}</span></p>
                         <p className={styles.subtotal}>Subtotal: $<span>{product.price * product.quantity}</span></p>
                       </div>
+
+                      <button type='button' className={styles.delete} onClick={() => deleteProduct(product.id)}>X</button>
                     </div>
                   ))
                 )}
             </div>
             <aside className={styles.resume}>
                 <h3>Resumen del Pedido</h3>
-                <p>Total a pagar: </p>
+                <p>Total a pagar: ${total}</p>
             </aside>
         </div>
       </main>
