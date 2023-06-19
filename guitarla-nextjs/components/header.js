@@ -26,7 +26,7 @@ export default function Header() {
                 <Link href="/blog" className={ router.pathname === '/blog' ? styles.active : '' } >
                   Blog
                 </Link>
-                <Link href="/carrito" className={ router.pathname === '/blog' ? styles.active : '' } >
+                <Link href="/carrito" className={ router.pathname === '/carrito' ? styles.active : '' } >
                   <Image src='/img/carrito.png' width={20} height={16} alt='Imagen Carrito de Compras' />
                 </Link>
             </nav>

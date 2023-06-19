@@ -33,7 +33,7 @@ export default function App({ Component, pageProps }) {
   const updateQuantity = guitar => {
     const updatedShoppingCart = shoppingCart.map( guitarState => {
       if(guitarState.id === guitar.id ) {
-        guitarState.cantidad = parseInt( guitar.quantity )
+        guitarState.quantity = parseInt( guitar.quantity )
       } 
       return guitarState
     })
